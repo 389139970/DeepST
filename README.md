@@ -18,7 +18,7 @@ DeepST uses the following dependencies:
 To install DeepST, `cd` to the **DeepST** folder and run the install command:
 
 ```
-python setup.py install
+python setup.py install  .
 ```
 
 To install the development version:
