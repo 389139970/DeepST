@@ -37,7 +37,7 @@ nb_flow = 2  # there are two types of flows: new-flow and end-flow
 # divide data into two subsets: Train & Test, of which the test set is the
 # last 10 days
 days_test = 10
-len_test = T * days_test
+len_test = T * days_test #last 10 days are used to be the testbed
 map_height, map_width = 16, 8  # grid size
 # For NYC Bike data, there are 81 available grid-based areas, each of
 # which includes at least ONE bike station. Therefore, we modify the final
@@ -86,6 +86,8 @@ def main():
     print(
         "**at the first time, it takes a few minites to compile if you use [Theano] as the backend**")
     model = build_model(external_dim)
+    json_string = model.to_json()#等价于 json_string = model.get_config()  
+    open('my_model_architecture.json','w').write(json_string) 
     hyperparams_name = 'c{}.p{}.t{}.resunit{}.lr{}'.format(
         len_closeness, len_period, len_trend, nb_residual_unit, lr)
     fname_param = os.path.join('MODEL', '{}.best.h5'.format(hyperparams_name))
