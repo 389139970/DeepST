@@ -100,3 +100,4 @@ ENV/
 # Rope project settings
 .ropeproject
 scripts/papers/AAAI17/BikeNYC/.vs/
+scripts/papers/AAAI17/BikeNYC/MODEL/my_model_architecture.json
